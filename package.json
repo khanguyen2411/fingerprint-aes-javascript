@@ -1,0 +1,32 @@
+{
+  "name": "fingerprint-aes-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanguyen2411/fingerprint-aes-javascript.git"
+  },
+  "author": "khanvt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khanguyen2411/fingerprint-aes-javascript/issues"
+  },
+  "homepage": "https://github.com/khanguyen2411/fingerprint-aes-javascript#readme",
+  "devDependencies": {
+    "electron": "^20.0.2",
+    "electron-reloader": "^1.2.3"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.0.8",
+    "axios": "^0.27.2",
+    "html-docx-js": "^0.3.1",
+    "html-to-docx": "^1.4.0",
+    "mammoth": "^1.5.1",
+    "mammoth-colors": "^1.0.2"
+  }
+}

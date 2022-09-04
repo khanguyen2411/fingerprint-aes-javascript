@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>AES Encryption & Decryption</title>
+  </head>
+  <body>
+  
+    <div class="layout">
+      <div class="main-layout">
+
+        <div class="column-1">
+          <h1 class="column-title">CLIENT</h1>
+          <div class="main-layout-1">
+            <div class="column-image">
+              <div class="image-container send-image">
+                <image class="send-fingerprint" id="send-fingerprint" src="./src/img/default-image.jpg">
+              </div>
+
+              <div>
+                <button class="button is-primary button-select-image" id="button-select-image">Chọn ảnh</button>
+              </div>
+              <div>
+                <button class="button is-link button-send-image" id="button-send-image">Gửi ảnh</button>
+              </div>
+            </div>
+
+            <div class="column-content">
+              <h1>Thông tin nhận được</h1>
+              <div class="information retrieve-information" id="retrieve-information" style="text-align: left; padding: 10px;" >
+
+              </div>
+
+              <div class="button-layout">
+                <button class="button is-warning button-client-decrypt" id="button-client-decrypt">Giải mã</button>
+                <button class="button is-danger button-client-gen-key" id="button-client-gen-key">Tạo khóa</button>
+              </div>
+
+              <h1>Khóa</h1>
+              <div class="key decrypt-key" id="decrypt-key">
+                <h1 id="h1-decrypt-key"></h1>
+              </div>
+              <h1>Thông tin sau giãi mã</h1>
+              <div class="information decrypted-information" id="decrypted-information" style="text-align: left; padding: 10px; overflow-y: scroll; ">
+
+              </div>
+
+              <button class="button is-link is-light button-save-information" id="button-save-information" style="width: 50%;">Lưu thông tin</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="column-2">
+          <h1 class="column-title">SERVER</h1>
+          <div class="main-layout-1">
+            <div class="column-image">
+              <div class="image-container retrieve-image">
+                <image class="retrieve-fingerprint" id="retrieve-fingerprint" src="./src/img/default-image.jpg">
+              </div>
+
+              <div >
+                <h1> Ảnh nhận được </h1>
+              </div>
+
+              <div>
+                <button class="button is-primary button-find-information" id="button-find-information" 
+                style="width: 80%; margin: 15px 0 15px 0">
+                Tìm kiếm thông tin
+              </button>
+              </div>
+            </div>
+
+            <div class="column-content">
+              <h1>Thông tin người dùng</h1>
+              <div class="information read-information" id="read-information" style="text-align: left; padding: 10px; overflow-y: scroll; ">
+                
+              </div>
+
+              <div class="button-layout">
+                <button class="button is-warning button-server-encrypt" id="button-server-encrypt">Mã hóa</button>
+                <button class="button is-danger button-server-gen-key" id="button-server-gen-key">Tạo khóa</button>
+              </div>
+
+              <h1>Khóa</h1>
+              <div class="key encrypt-key" id="encrypt-key">
+                <h1 id="h1-encrypt-key"></h1>
+              </div>
+              <h1>Thông tin sau mã hóa</h1>
+              <div class="information encrypted-information" id="encrypted-information" style="text-align: left; padding: 10px; overflow-y: scroll; " >
+
+              </div>
+
+              <button class="button is-link is-light button-send-information" id="button-send-information" style="width: 50%;">Gửi đi</button>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-layout">
+        <h1>Chọn loại file</h1>
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="fileType" id="radio-input">
+            Nhập
+          </label>
+          <label class="radio">
+            <input type="radio" name="fileType" id="radio-txt" checked>
+            .txt
+          </label>
+          <label class="radio">
+            <input type="radio" name="fileType" id="radio-docx">
+            .docx
+          </label>
+        </div>
+        <h1 id="h1-message">Welcome</h1>
+        <div class="buttons">
+          <button class="button is-primary is-danger" id="button-clear-information">Làm mới</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+  </body>
+</html>

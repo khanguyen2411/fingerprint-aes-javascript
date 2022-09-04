@@ -1,0 +1,137 @@
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+.layout{
+    height: inherit;
+    width: inherit;
+}
+
+.main-layout{
+    height: 700px;
+    width: 100%;
+    display: flex;
+}
+
+.footer-layout{
+    height: 100px;
+    width: 100%;
+    border-top: 1px solid black;
+    text-align: center;
+}
+
+.column-title{
+    text-align: center;
+}
+
+.column-1, .column-2 {
+    height: inherit;
+    width: 50%;
+    border-left: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.column-title{
+    text-align: center;
+    width: 100%;
+    height: 5%;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.main-layout-1{
+    width: 100%;
+    height: 95%;
+    padding: 15px;
+    display: flex;
+    text-align: center;
+}
+
+.column-image{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.column-content{
+    width: 60%;
+}
+
+.button{
+    width: 100px;
+    margin: 5px;
+}
+
+.image-container{
+    width: 150px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.send-fingerprint, .retrieve-fingerprint{
+    width: 150px;
+    height: 200px;
+    object-fit: fill;
+}
+
+.information{
+    width: 100%;
+    height: 30%;
+    border: 1px solid black;
+    margin: 10px 0 10px 0;
+}
+
+.button-layout{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.key{
+    width: 100%;
+    height: 30px;
+    border: 1px solid black;
+    margin: 10px 0 10px 0;
+}
+
+.control{
+    width: inherit;
+    height: 40%;
+    text-align: center;
+    margin: auto;
+}
+
+.radio{
+    margin: 10px 0 0 0;
+    width: 100px;
+    height: 30px;
+}
+
+#h1-message{
+    color: red;
+    font-weight: 700;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+}
+
+#h1-encrypt-key, #h1-decrypt-key{
+    width: inherit;
+    height: inherit;
+}
+
+.encrypted-information{
+    word-wrap: break-word;
+    overflow-y: scroll;
+}
+
+.retrieve-information{
+    word-wrap: break-word;
+    overflow-y: scroll; 
+}
