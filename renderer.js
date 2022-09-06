@@ -148,7 +148,7 @@ btnSelectImage.addEventListener('click', () => {
 });
 ipcRenderer.on('file', (event, file) => {
   file = file.toString()
-  const filePath = path.join('./src/img/', file.substring(49, file.length))
+  const filePath = path.join('./src/img/', file.substring(43, file.length))
   imageSendPath = filePath
   sendFingerprintImage.src = filePath
 });
@@ -221,7 +221,11 @@ btnFindInformation.addEventListener('click', async () => {
     } else {
       //xử lý file docx
       if(isDocxFile){
-        var response = await mammoth.convertToHtml({path: "./src/docx-info/1.docx"})
+        var infoPath = path.join(
+          './src/docx-info/',
+          position.concat('.docx')
+        )
+        var response = await mammoth.convertToHtml({path: infoPath})
         let html = response.value
         readInformation.innerHTML = html
       }
