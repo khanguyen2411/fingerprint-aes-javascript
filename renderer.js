@@ -148,7 +148,7 @@ btnSelectImage.addEventListener('click', () => {
 });
 ipcRenderer.on('file', (event, file) => {
   file = file.toString()
-  const filePath = path.join('./src/img/', file.substring(43, file.length))
+  const filePath = path.join('./src/img/', file.substring(file.lastIndexOf("\\"), file.length))
   imageSendPath = filePath
   sendFingerprintImage.src = filePath
 });
@@ -227,6 +227,7 @@ btnFindInformation.addEventListener('click', async () => {
         )
         var response = await mammoth.convertToHtml({path: infoPath})
         let html = response.value
+        console.log(html)
         readInformation.innerHTML = html
       }
       
