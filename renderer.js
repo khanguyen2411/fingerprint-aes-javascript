@@ -4,7 +4,6 @@ const {readFileSync, promises: fsPromises} = require('fs');
 const fs = require('fs');
 import AesCtr from './aes/aes-ctr.js';
 const mammoth = require("mammoth-colors");
-const axios = require('axios')
 const htmlDocx = require('html-docx-js')
 
 
@@ -390,8 +389,7 @@ btnSaveInformation.addEventListener('click', async () => {
     saveAs(blob, "information.txt");
   } 
   else {
-    if(isDocxFile){
-      // exportHTML(plainTextFromCipherText)  
+    if(isDocxFile){  
       var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
       "xmlns:w='urn:schemas-microsoft-com:office:word' "+
       "xmlns='http://www.w3.org/TR/REC-html40'>"+

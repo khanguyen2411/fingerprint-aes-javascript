@@ -1,29 +1,7 @@
 import Aes from './aes.js';
 
-
-/**
- * AesCtr: Counter-mode (CTR) wrapper for AES.
- *
- * This encrypts a Unicode string to produces a base64 ciphertext using 128/192/256-bit AES,
- * and the converse to decrypt an encrypted ciphertext.
- *
- * See csrc.nist.gov/publications/detail/sp/800-38a/final
- */
 class AesCtr extends Aes {
 
-    /**
-     * Encrypt a text using AES encryption in Counter mode of operation.
-     *
-     * Unicode multi-byte character safe.
-     *
-     * @param   {string} plaintext - Source text to be encrypted.
-     * @param   {string} password - The password to use to generate a key for encryption.
-     * @param   {number} nBits - Number of bits to be used in the key; 128 / 192 / 256.
-     * @returns {string} Encrypted text, base-64 encoded.
-     *
-     * @example
-     *   const encr = AesCtr.encrypt('big secret', 'pāşšŵōřđ', 256); // 'lwGl66VVwVObKIr6of8HVqJr'
-     */
     static encrypt(plaintext, password, nBits) {
         if (![ 128, 192, 256 ].includes(nBits)) throw new Error('Key size is not 128 / 192 / 256');
         plaintext = AesCtr.utf8Encode(String(plaintext));
@@ -31,10 +9,10 @@ class AesCtr extends Aes {
 
         // use AES itself to encrypt password to get cipher key (using plain password as source for key
         // expansion) to give us well encrypted key (in real use hashed password could be used for key)
-        const nBytes = nBits/8; // no bytes in key (16/24/32)
+        const nBytes = nBits/8; // tính số byte
         const pwBytes = new Array(nBytes);
         for (let i=0; i<nBytes; i++) { // use 1st 16/24/32 chars of password for key
-            pwBytes[i] = i<password.length ?  password.charCodeAt(i) : 0;
+            pwBytes[i] = i < password.length ?  password.charCodeAt(i) : 0;
         }
         let key = Aes.cipher(pwBytes, Aes.keyExpansion(pwBytes)); // gives us 16-byte key
         key = key.concat(key.slice(0, nBytes-16)); // expand key to 16/24/32 bytes long
